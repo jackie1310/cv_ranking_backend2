@@ -4,10 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SERVER = os.getenv('SERVER')
-DATABASE = os.getenv('DATABASE')
-USERNAME = os.getenv('USER')
-PASSWORD = os.getenv('PASSWORD')
+# SERVER = os.getenv('SERVER')
+SERVER = '103.97.125.205'
+# DATABASE = os.getenv('DATABASE')
+DATABASE = 'db_cv'
+# USERNAME = os.getenv('USER')
+USERNAME = 'intern'
+# PASSWORD = os.getenv('PASSWORD')
+PASSWORD = 'interncybersoft'
 
 connectionString = f"""
     DRIVER={{ODBC Driver 18 for SQL Server}};
