@@ -1,19 +1,20 @@
 import pyodbc
 import os
 from dotenv import load_dotenv
+from info import SERVER, DATABASE, USER, PASSWORD
 
 load_dotenv()
 
-SERVER = os.getenv('SERVER')
-DATABASE = os.getenv('DATABASE')
-USERNAME = os.getenv('USER')
-PASSWORD = os.getenv('PASSWORD')
+# SERVER = os.getenv('SERVER')
+# DATABASE = os.getenv('DATABASE')
+# USERNAME = os.getenv('USER')
+# PASSWORD = os.getenv('PASSWORD')
 
 connectionString = f"""
     DRIVER={{ODBC Driver 18 for SQL Server}};
     SERVER={f'{SERVER},1433'};
     DATABASE={DATABASE};
-    UID={USERNAME};
+    UID={USER};
     PWD={PASSWORD};
     Encrypt=yes;
     TrustServerCertificate=yes;
