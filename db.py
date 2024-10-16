@@ -4,14 +4,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# SERVER = os.getenv('SERVER')
-SERVER = '103.97.125.205'
-# DATABASE = os.getenv('DATABASE')
-DATABASE = 'db_cv'
-# USERNAME = os.getenv('USER')
-USERNAME = 'intern'
-# PASSWORD = os.getenv('PASSWORD')
-PASSWORD = 'interncybersoft'
+SERVER = os.getenv('SERVER')
+DATABASE = os.getenv('DATABASE')
+USERNAME = os.getenv('USER')
+PASSWORD = os.getenv('PASSWORD')
 
 connectionString = f"""
     DRIVER={{ODBC Driver 18 for SQL Server}};
@@ -31,4 +27,4 @@ def connectToDB():
         return cursor
     except pyodbc.Error as e:
         print(f"Error connecting to SQL Server: {e}")
-        return None
+        return {"status": None, "error": e}

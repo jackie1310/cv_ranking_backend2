@@ -167,10 +167,10 @@ async def get_candidate_profile(candidate_id: int):
 async def get_all_candidate_profiles():
     # Connect to the database
     cursor = connectToDB()
-    if cursor is None:
+    if cursor["status"] is None:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Error connecting to the Database"
+            detail=f"Error connecting to the Database {cursor["error"]}"
         )
     # SQL query to fetch all candidate profiles
     select_query = '''
